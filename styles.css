@@ -1,0 +1,200 @@
+/* Ajustes generales de estilo */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #40E0D0; /* Turquesa claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Evita el desbordamiento debido a los signos flotantes */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite interactuar con elementos superiores */
+    overflow: hidden;
+}
+
+.math-symbols {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.symbol {
+    position: absolute;
+    font-size: 3rem; /* Tamaño de los signos matemáticos */
+    color: rgba(0, 0, 0, 0.3); /* Color negro con opacidad para el fondo */
+    user-select: none;
+    animation: float 10s infinite ease-in-out;
+}
+
+/* Generar múltiples posiciones aleatorias para los signos matemáticos */
+
+.symbol:nth-child(1) { top: 5%; left: 10%; }
+.symbol:nth-child(2) { top: 15%; left: 25%; }
+.symbol:nth-child(3) { top: 30%; left: 5%; }
+.symbol:nth-child(4) { top: 40%; left: 40%; }
+.symbol:nth-child(5) { top: 55%; left: 20%; }
+.symbol:nth-child(6) { top: 65%; left: 45%; }
+.symbol:nth-child(7) { top: 75%; left: 30%; }
+.symbol:nth-child(8) { top: 85%; left: 55%; }
+.symbol:nth-child(9) { top: 20%; left: 70%; }
+.symbol:nth-child(10) { top: 35%; left: 80%; }
+.symbol:nth-child(11) { top: 50%; left: 15%; }
+.symbol:nth-child(12) { top: 60%; left: 60%; }
+.symbol:nth-child(13) { top: 70%; left: 25%; }
+.symbol:nth-child(14) { top: 80%; left: 75%; }
+.symbol:nth-child(15) { top: 10%; left: 50%; }
+.symbol:nth-child(16) { top: 25%; left: 10%; }
+.symbol:nth-child(17) { top: 40%; left: 30%; }
+.symbol:nth-child(18) { top: 55%; left: 60%; }
+.symbol:nth-child(19) { top: 65%; left: 10%; }
+.symbol:nth-child(20) { top: 75%; left: 40%; }
+.symbol:nth-child(21) { top: 85%; left: 70%; }
+.symbol:nth-child(22) { top: 5%; left: 80%; }
+.symbol:nth-child(23) { top: 15%; left: 35%; }
+.symbol:nth-child(24) { top: 25%; left: 55%; }
+.symbol:nth-child(25) { top: 35%; left: 45%; }
+.symbol:nth-child(26) { top: 45%; left: 65%; }
+.symbol:nth-child(27) { top: 55%; left: 50%; }
+.symbol:nth-child(28) { top: 65%; left: 25%; }
+.symbol:nth-child(29) { top: 75%; left: 55%; }
+.symbol:nth-child(30) { top: 85%; left: 40%; }
+
+/* Animación de flotación */
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el contenedor del juego */
+
+.container {
+    text-align: center;
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    position: relative; /* Necesario para el posicionamiento de elementos internos */
+    z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+}
+
+.titulo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000; /* Negro para el título */
+    margin-bottom: 20px;
+}
+
+#ejercicio {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#opciones button {
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0; /* Fondo claro para los botones */
+}
+
+#opcion-a:hover,
+#opcion-b:hover,
+#opcion-c:hover {
+    background-color: #ddd; /* Color al pasar el mouse sobre los botones */
+}
+
+#nueva-pregunta {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Verde para el botón */
+    color: white;
+    margin-top: 20px;
+}
+
+#nueva-pregunta:hover {
+    background-color: #45a049;
+}
+
+#mensaje {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.mensaje.correcto {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.mensaje.incorrecto {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#cronometro {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+#oportunidades {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+#resultado p {
+    font-size: 18px;
+}
+
+#jugar-nuevamente {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Verde para el botón */
+    color: white;
+    margin-top: 20px;
+}
+
+#jugar-nuevamente:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+
